@@ -1,0 +1,23 @@
+<h1>Sessions#new</h1>
+<h1>Log in</h1>
+<p><%= flash[:notice] %></p>
+<%= form_for :session, url: sessions_path do |f| %>
+    <div class="field">
+      <%= f.label "login as" %>
+
+      <%= f.radio_button :user, true, :checked => true  %>
+      <%= f.label :autolyse, "User", :value => "true"  %>
+
+      <%= f.radio_button :user, false  %>
+      <%= f.label :autolyse, "Admin", :value => "false"  %>
+    </div>
+    <div class="field">
+      <%= f.label :login %>
+      <%= f.text_field :login %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="actions"><%= f.submit :submit %></div>
+<% end %>

@@ -1,0 +1,10 @@
+<% case @type when 1 %>
+  <%= link_to "login",login_path %>
+<% when 2 %>
+  <%= link_to "products",products_path %>
+  <%= link_to "categories",categories_path %>
+  <%= link_to "user info", user_path(@current_user.id)%>
+  <%= link_to "logout",logout_path %>
+<% when 3 %>
+  <%= link_to "logout",logout_path %>
+<% end %>
